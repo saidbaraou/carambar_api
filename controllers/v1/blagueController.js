@@ -1,9 +1,5 @@
 const Blague = require('../../models/Blague');
-<<<<<<< HEAD
-const { Op } = require('sequelize');
-=======
 const { Sequelize } = require('sequelize');
->>>>>>> feat/controllers
 
 exports.addBlague = async (req, res) => {
   try {
@@ -19,8 +15,6 @@ exports.addBlague = async (req, res) => {
     }
     res.status(500).json({ error: 'Erreur lors de l\'ajout de la blague.', details: error.message });
   }
-<<<<<<< HEAD
-=======
 }
 
 exports.getAllBlagues = async (req, res) => {
@@ -57,5 +51,4 @@ exports.getRandomBlague = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Erreur lors de la récupération d\'une blague aléatoire.', details: error.message });
   }
->>>>>>> feat/controllers
 }
