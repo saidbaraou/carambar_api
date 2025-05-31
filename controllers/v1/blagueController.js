@@ -16,3 +16,13 @@ exports.addBlague = async (req, res) => {
     res.status(500).json({ error: 'Erreur lors de l\'ajout de la blague.', details: error.message });
   }
 }
+
+exports.getAllBlagues = async (req, res) => {
+  try {
+    const allBlagues = await Blague.findAll();
+    res.status(200).json(allBlagues);
+  } catch (error) {
+    console.error('Error fetching blagues:', error);
+    res.status(500).json({ error: 'Erreur lors de la récupération des blagues.', details: error.message });
+  }
+}
