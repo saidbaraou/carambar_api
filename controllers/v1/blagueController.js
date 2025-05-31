@@ -1,5 +1,5 @@
 const Blague = require('../../models/Blague');
-const { Op } = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 exports.addBlague = async (req, res) => {
   try {
@@ -36,5 +36,19 @@ exports.getBlagueById = async (req, res) => {
     res.status(200).json(blague);
   } catch (error) {
     res.status(500).json({ error: 'Erreur lors de la récupération de la blague.', details: error.message });
+  }
+}
+
+exports.getRandomBlague = async (req, res) => {
+  try {
+    const randomBlague = await Blague.findOne({
+      order: Sequelize.literal('RANDOM()')
+    });
+    if (!randomBlague) {
+      return res.status(404).json({ error: 'Aucune blague trouvée.' });
+    }
+    re.status(200).json(randomBlague);
+  } catch (error) {
+    res.status(500).json({ error: 'Erreur lors de la récupération d\'une blague aléatoire.', details: error.message });
   }
 }
