@@ -22,7 +22,19 @@ exports.getAllBlagues = async (req, res) => {
     const allBlagues = await Blague.findAll();
     res.status(200).json(allBlagues);
   } catch (error) {
-    console.error('Error fetching blagues:', error);
     res.status(500).json({ error: 'Erreur lors de la récupération des blagues.', details: error.message });
+  }
+}
+
+exports.getBlagueById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const blague = await Blague.findByPk(id);
+    if (!blague) {
+      return res.status(404).json({ error: 'Blague non trouvée.' });
+    }
+    res.status(200).json(blague);
+  } catch (error) {
+    res.status(500).json({ error: 'Erreur lors de la récupération de la blague.', details: error.message });
   }
 }
