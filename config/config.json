@@ -1,14 +1,14 @@
 {
   "development": {
     "dialect": "sqlite",
-    "storage": "./database/blagues.sqlite"
+    "storage": "../database/database.js"
   },
   "test": {
     "dialect": "sqlite",
-    "storage": "./database/blagues.sqlite"
+    "storage": "../database/database.js"
   },
   "production": {
     "dialect": "sqlite",
-    "storage": "./database/blagues.sqlite"
+    "storage": "../database/database.js"
   }
 }
