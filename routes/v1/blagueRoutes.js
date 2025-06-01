@@ -3,16 +3,16 @@ const router = express.Router();
 const blagueController = require('../../controllers/v1/blagueController');
 
 // Route to add a new blague
-router.post('/add', blagueController.addBlague);
+router.post('/api/v1/add', blagueController.addBlague);
 
 // Route to get all blagues
-router.get('/all', blagueController.getAllBlagues);
+router.get('/api/v1/all', blagueController.getAllBlagues);
 
 // Route to get a blague by ID
-router.get('/:id', blagueController.getBlagueById);
+router.get('/api/v1/:id', blagueController.getBlagueById);
 
 // Route to get a random blague
-router.get('/random', blagueController.getRandomBlague);
+router.get('/api/v1/random', blagueController.getRandomBlague);
 
 
 module.exports = router;
