@@ -8,7 +8,7 @@ const Blague = sequelize.define('Blague', {
     autoIncrement: true,
   },
   question: {
-    type: DataTypes:TEXT,
+    type: DataTypes.TEXT,
     allowNull: false,
     unique: true,
   },
