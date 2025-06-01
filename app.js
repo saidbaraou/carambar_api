@@ -1,13 +1,13 @@
 const express = require('express');
 const sequelize = require ('./database/database.sqlite')
-const blagueRoutes = require ('./routes/v1/blagueRoutes');
+const blagueRoutes = require ('./routes/v1/blagueRoutes.js');
 const Blague = require('./models/Blague');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use('/api/v1/blagues', blagueRoutes);
+app.use('/api/v1', blagueRoutes);
 
 sequelize.sync({ force: false })
   .then(() => {
