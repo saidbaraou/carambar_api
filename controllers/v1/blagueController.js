@@ -1,4 +1,4 @@
-const Blague = require('../../models/Blague');
+const Blague = require('../../models/blague');
 const { Sequelize } = require('sequelize');
 
 exports.addBlague = async (req, res) => {
