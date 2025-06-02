@@ -10,8 +10,23 @@ app.use(express.json());
 app.use('/api/v1/blagues', blagueRoutes);
 
 sequelize.sync({ force: false })
-  .then(() => {
+  .then(async () => {
     console.log('Base de données synchronisée.');
+    try {
+      const testRandomBlague = await blague.findOne({
+        order: [
+          sequelize.literal('RANDOM()')
+        ],
+        limit: 1
+      });
+      if (testRandomBlague) {
+        console.log('TEST RANDOM BLAGUE RÉUSSI :', testRandomBlague.toJSON());
+      } else {
+        console.log('TEST RANDOM BLAGUE : Aucune blague trouvée (ceci est la source du problème).');
+      }
+    } catch (testError) {
+      console.error('TEST RANDOM BLAGUE ERREUR :', testError);
+    }
     app.listen(PORT, () => {
       console.log(`Serveur démarré sur le port ${PORT}`);
     });
