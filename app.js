@@ -1,7 +1,7 @@
 const express = require('express');
-const sequelize = require ('./database/database.sqlite')
+const sequelize = require ('./database/database.js')
 const blagueRoutes = require ('./routes/v1/blagueRoutes.js');
-const blague = require('./models/blague.js')
+const blague = require('./models/Blague')
 
 const app = express();
 const PORT = process.env.PORT || 3000;

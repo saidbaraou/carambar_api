@@ -42,7 +42,10 @@ exports.getBlagueById = async (req, res) => {
 exports.getRandomBlague = async (req, res) => {
   try {
     const randomBlague = await Blague.findOne({
-      order: Sequelize.literal('RANDOM()')
+      order: [
+        Sequelize.literal('RANDOM()')
+      ],
+      limit: 1
     });
     if (!randomBlague) {
       return res.status(404).json({ error: 'Aucune blague trouvée.' });
