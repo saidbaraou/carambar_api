@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: 'https://carambar-front-998b.onrender.com/', // <-- REMPLACEZ PAR L'URL DE VOTRE FRONTEND RENDER
+  origin: 'https://carambar-front-998b.onrender.com', // <-- REMPLACEZ PAR L'URL DE VOTRE FRONTEND RENDER
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Autorise l'envoi de cookies d'authentification si vous en aviez
   optionsSuccessStatus: 204
