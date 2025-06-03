@@ -7,6 +7,14 @@ const blague = require('./models/Blague')
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const corsOptions = {
+  origin: 'http://127.0.0.1:5500/', // <-- REMPLACEZ PAR L'URL DE VOTRE FRONTEND RENDER
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Autorise l'envoi de cookies d'authentification si vous en aviez
+  optionsSuccessStatus: 204
+};
+app.use(cors(corsOptions)); // <-- Utilisez le middleware CORS
+
 app.use(express.json());
 app.use('/api/v1/blagues', blagueRoutes);
 
