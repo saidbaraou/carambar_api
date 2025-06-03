@@ -1,13 +1,13 @@
-import { create, findAll, findByPk, findOne } from '../../models/blague.js';
-import { literal } from '../../database/database.js';
+const blague = require('../../models/blague.js');
+const sequelize = require('../../database/database.js');
 
-export async function addBlague(req, res) {
+exports.addBlague = async (req, res) => {
   try {
     const { question, reponse } = req.body;
     if (!question || !reponse) {
       return res.status(400).json({ error: 'La question et la réponse sont requises.' });
     }
-    const newBlague = await create({ question, reponse });
+    const newBlague = await blague.create({ question, reponse });
     res.status(201).json(newBlague);
   } catch (error) {
     if (error.name === 'SequelizeUniqueConstraintError') {
@@ -17,19 +17,19 @@ export async function addBlague(req, res) {
   }
 }
 
-export async function getAllBlagues(req, res) {
+exports.getAllBlagues = async (req, res) => {
   try {
-    const allBlagues = await findAll();
+    const allBlagues = await blague.findAll();
     res.status(200).json(allBlagues);
   } catch (error) {
     res.status(500).json({ error: 'Erreur lors de la récupération des blagues.', details: error.message });
   }
 }
 
-export async function getBlagueById(req, res) {
+exports.getBlagueById = async (req, res) => {
   try {
     const { id } = req.params;
-    const blagueById = await findByPk(id);
+    const blagueById = await blague.findByPk(id);
     if (!blagueById) {
       return res.status(404).json({ error: 'Blague non trouvée.' });
     }
@@ -39,11 +39,11 @@ export async function getBlagueById(req, res) {
   }
 }
 
-export async function getRandomBlague(req, res) {
+exports.getRandomBlague = async (req, res) => {
   try {
-      const randomBlague = await findOne({
+      const randomBlague = await blague.findOne({
         order: [
-          literal('RANDOM()')
+          sequelize.literal('RANDOM()')
         ],
         limit: 1
     });
