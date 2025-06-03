@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const sequelize = require ('./database/database.js')
 const blagueRoutes = require ('./routes/v1/blagueRoutes.js');
-const blague = require('./models/Blague')
+const blague = require('./models/blague.js')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
