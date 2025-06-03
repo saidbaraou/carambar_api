@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const sequelize = require ('./database/database.js')
 const blagueRoutes = require ('./routes/v1/blagueRoutes.js');
 const blague = require('./models/Blague')
