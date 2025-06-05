@@ -7,9 +7,9 @@ const env = process.env.NODE_ENV || 'development';
 const dbConfig = config[env];
 
 const dbPath = path.join(__dirname, 'database.sqlite');
-if (!fs.existsSync(dbPath)) {
-  fs.writeFileSync(dbPath, '');
-}
+// if (!fs.existsSync(dbPath)) {
+//   fs.writeFileSync(dbPath, '');
+// }
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
