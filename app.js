@@ -8,12 +8,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: 'https://carambar-front-998b.onrender.com', // <-- REMPLACEZ PAR L'URL DE VOTRE FRONTEND RENDER
+  origin: 'https://saidbaraou.github.io/carambar_front', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Autorise l'envoi de cookies d'authentification si vous en aviez
+  credentials: true, 
   optionsSuccessStatus: 204
 };
-app.use(cors(corsOptions)); // <-- Utilisez le middleware CORS
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use('/api/v1/blagues', blagueRoutes);
