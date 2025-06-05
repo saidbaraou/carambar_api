@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "40404105-2ad2-4036-ad70-d42ba54848e9",
+		"name": "carambar_render",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25338272"
+	},
+	"item": [
+		{
+			"name": "https://carambar-api-gcpu.onrender.com/api/v1/blagues/5",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"Quel est le comble pour un joueur de bowling ?\",\r\n    \"reponse\": \"C’est de perdre la boule\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://carambar-api-rd87.onrender.com/api/v1/blagues/add",
+					"protocol": "https",
+					"host": [
+						"carambar-api-rd87",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blagues",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://carambar-api-gcpu.onrender.com/api/v1/blagues/all",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://carambar-api-rd87.onrender.com/api/v1/blagues/all",
+					"protocol": "https",
+					"host": [
+						"carambar-api-rd87",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blagues",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://carambar-api-gcpu.onrender.com/api/v1/blagues/random",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://carambar-api-rd87.onrender.com/api/v1/blagues/random",
+					"protocol": "https",
+					"host": [
+						"carambar-api-rd87",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blagues",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://carambar-api-gcpu.onrender.com/api/v1/blagues/:id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://carambar-api-rd87.onrender.com/api/v1/blagues/:id",
+					"protocol": "https",
+					"host": [
+						"carambar-api-rd87",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"blagues",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
