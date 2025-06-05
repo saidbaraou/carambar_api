@@ -8,7 +8,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: 'https://saidbaraou.github.io/carambar_front', 
+  origin: [
+    'https://carambar-front-998b.onrender.com', // Render front
+    'https://saidbaraou.github.io'             // Github pages front
+],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, 
   optionsSuccessStatus: 204
